@@ -1,0 +1,39 @@
+pwd #shows the current directory
+cd .. # moves one level up
+cd directory #moves into the respective directory
+
+# if you are where you want to be
+
+#git commands: clone the project on your computer:
+git clone https://github.com/Joachim0211/GansProjectG3.git
+
+#cd into the new folder 'GansProjectG3'
+cd GansProjectG3
+
+#check the git status
+git status
+
+# now you can work here on the files
+
+#when finished:
+git pull #allways pull before push to main
+git status  # shows whether you have something to commit (changed)
+git add . # add the changes to the commit, don´t forget the .
+git status # now the commit is ready the changed files should be in green
+git commit -m "a short comment on what you have done e.g. I did delete lin 5-10" #commit your changes locally
+
+git push origin main #!!!! this should normally not be done if you are working in a group 
+			# it changes the respective file in main of the githup repository, imagine all four
+			# are working on the same file and do this. only the last file would stay all other 
+			# were overwritten and only recoverable from you local repo
+
+#so if we start to work on one file do the following:
+#first pull the current status to your local main:
+git pull 
+
+# now make a local new branch
+git switch -c nameOfTheNewBrach
+#in you command line you should see the new branch indicated
+
+git push --set-upstream origin nameOfTheNewBranch # this pushes it to a new branch on githup  
+# you have set up the branch on git hup today

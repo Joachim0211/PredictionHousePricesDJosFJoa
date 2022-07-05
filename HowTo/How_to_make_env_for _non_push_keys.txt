@@ -1,0 +1,41 @@
+This short file will show the steps to put API-Keys and other sensible data in a .env file in order not
+to push it on Githup.
+The .env is in the gitignore-file, what means, the file is not included in any push to githup!
+
+The prozess includes some steps but is solid.
+
+run in yor notebook the following lines: 
+
+!pip install python-dotenv
+%load_ext dotenv
+%dotenv
+import os
+
+You do need to do the installation probably only once!
+
+Now make a file: .env  in the same! folder as your notebook is in.
+
+The following steps need to be done on the command line or at least 
+I only know how to do it from there.
+
+First go to the folder with you notebook and the .env file. 
+Type in: 
+ls -a #you should see the .env file
+open the file with nano (or any othe text editor):
+Type in:
+nano .env 	# opens the file, the file should be empty
+		# write in the file e.g.: API_K_W='d0040c9b033d6a3a4772784afd988afa'
+now:
+strg + o # saves the files after you enter
+strg + x # exits nano back to the command line
+
+now leave the command line:
+in your notebook (same folder as .env) 
+type in :
+API_key = os.getenv("API_K_W")# now API_key contains your key
+
+Now you can push your notebook to githup and anybody who wants to use it must use his own key!!
+
+Good luck Joachim
+
+
